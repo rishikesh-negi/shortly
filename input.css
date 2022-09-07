@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h2 {
+    @apply text-5xl font-bold tracking-tight leading-[3rem] 2xl:text-6xl;
+  }
+
+  h3 {
+    @apply text-4xl font-bold tracking-tight leading-[3rem] 2xl:text-5xl;
+  }
+
+  h4 {
+    @apply text-xl font-bold tracking-tight leading-[2rem];
+  }
+}
+
+.section-container {
+  @apply container mx-auto py-8 px-2 sm:px-4 lg:p-8;
+}
+
+.nav-link {
+  @apply relative z-10 px-4 py-2 rounded-md overflow-hidden text-base text-slate-500 font-bold tracking-wider transition duration-200 hover:text-white active:translate-y-0.5 before:absolute before:left-0 before:bottom-0 before:w-full before:h-0 before:bg-darkViolet before:-z-10 hover:before:h-full before:transition-all before:duration-200;
+}
+
+.menu-link {
+  @apply relative z-10 px-4 py-2 rounded-md overflow-hidden text-base text-white font-bold tracking-wider transition duration-200 hover:text-white active:translate-y-0.5 before:absolute before:left-0 before:bottom-0 before:w-full before:h-0 before:bg-cyan before:-z-10 hover:before:h-full before:transition-all before:duration-200;
+}
+
+.btn-s-rounded {
+  @apply px-8 py-3 rounded-full bg-cyan text-base text-white font-bold tracking-wider transition-all duration-200 hover:bg-cyan/80 active:translate-y-0.5;
+}
+
+.btn-b-rounded {
+  @apply px-10 py-5 rounded-full bg-cyan text-2xl text-white font-bold tracking-wider transition-all duration-200 hover:bg-cyan/80 active:translate-y-0.5;
+}
+
+/* MOBILE MENU: */
+.menu-open {
+  @apply visible left-[50%] translate-x-[-50%];
+}
+
+.menu-close {
+  @apply invisible left-[110%];
+}
+
+.ham-top,
+.ham-mid,
+.ham-bot {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  height: 3px;
+  width: 24px;
+  background: #121212;
+  border-radius: 100px;
+}
+
+.open {
+  transform: translateX(-2px);
+}
+
+.ham-top {
+  transform: translateY(-6px);
+}
+.open .ham-top {
+  transform: rotate(225deg) translateY(-4px);
+}
+
+.open .ham-mid {
+  visibility: hidden;
+}
+
+.ham-bot {
+  transform: translateY(6px);
+}
+.open .ham-bot {
+  transform: rotate(-225deg) translateY(4px);
+}
